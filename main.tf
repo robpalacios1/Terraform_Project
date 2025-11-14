@@ -47,17 +47,7 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
-# 4 Create a security group rule
-resource "aws_security_group_rule" "web_sg_rule" {
-  security_group_id = aws_security_group.web_sg.id
-  type              = "ingress"
-  from_port         = 80
-  to_port           = 80
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-}
-
-# 5 Create the server instance EC2
+# 4 Create the server instance EC2
 resource "aws_instance" "web_server" {
   ami             = "ami-0cae6d6fe6048ca2c"
   instance_type   = "t3.micro"
