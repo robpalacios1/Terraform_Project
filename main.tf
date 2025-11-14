@@ -58,7 +58,7 @@ resource "aws_security_group_rule" "web_sg_rule" {
 
 # 5 Create the server instance EC2
 resource "aws_instance" "web_server" {
-  ami = "ami-0a627a85fdcfabbaa"
+  ami = "ami-0cae6d6fe6048ca2c"
   instance_type = "t2.micro"
   security_groups = [aws_security_group.web_sg.id]
   subnet_id = aws_subnet.main_subnet.id
